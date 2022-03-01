@@ -49,5 +49,11 @@ padding: 0.5rem;
     color: #ffffff;
     display: flex;
     justify-content: center;
-    align
+    align-items: center;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: #ff8000;
 }
