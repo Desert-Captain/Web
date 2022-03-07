@@ -8,12 +8,6 @@ function Orders() {
             <div className="order-header">
                 <h3>Orders</h3>
             </div>
-            <div className="header-links">
-                <Link to="/">Home</Link>
-                <Link to="/catalog">Catalog</Link>
-                <Link to="/orders">Orders</Link>
-                </div>"
-
             <div className="order-list">
                 <table className="table">
                     <thead>
@@ -24,32 +18,33 @@ function Orders() {
                             <th>USER</th>
                             <th>PAID</th>
                             <th>PAID AT</th>
+                            <th>DELIVERED</th>
                             <th>DELIVERED AT</th>
                             <th>ACTIONS</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {data.order.map((order) => (
+                        {data.order.map(order => (
                             <tr key={order._id}>
-                                <td>{order._id}</td>
-                                <td>{order.createdAt}</td>
-                                <td>{order.totalPrice}</td>
-                                <td>{order.user.name}</td>
-                                <td>{order.isPaid}</td>
-                                <td>{order.paidAt}</td>
-                                <td>{order.isDelivered}</td>
-                                <td>{order.deliveredDate}</td>
-                                <td>
-                                    <Link to={"/order/" + order._id} className="button secondary">
+                            <td>{order._id}</td>
+                            <td>{order.createdAt}</td>
+                            <td>{order.totalPrice}</td>
+                            <td>{order.user.name}</td>
+                            <td>{order.isPaid}</td>
+                            <td>{order.paidAt}</td>
+                            <td>{order.isDelivered}</td>
+                            <td>{order.deliveredDate}</td>
+                            <td>
+                                <Link to={"/order/" + order._id} className="button secondary" >
                                     Details
                                     </Link>
-                                </td>
+                            </td>
                             </tr>
-                        ))}
+                            ))}
                     </tbody>
                 </table>
-                </div>
-            </div>);
+             </div>
+        </div>);
 };
 
 export default Orders;
