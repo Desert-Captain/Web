@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import { Route, BrowserRouter as Router, Switch, Link } from 'react-router-dom';
-import Product from './Products/Products';
+import { BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
+import Products from './Products/Products';
 import Home from './Home/Home';
 
 function App() {
@@ -45,11 +45,10 @@ function App() {
           </ul>
         </aside>
         <main className="main">
-          <Route>
+          <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/catalog" element={<Product />} />
-          </Route>
-        
+            <Route path="/catalog" element={<Products />} />
+          </Routes>
         </main>
         <footer 
         className="footer">&copy; 2022 Desert Captain
