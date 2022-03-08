@@ -1,5 +1,5 @@
 export default {
-    order: [{
+    fulfillment: [{
         _id: 1,
         createdAt: '02/20/2021',
         totalPrice: 42.90,
@@ -8,7 +8,7 @@ export default {
         },
         isPaid: true,
         paidAt: '02/14/2021',
-        isDelivered: true,
+        isShipped: true,
         deliveredDate: null,
     },
     {
@@ -20,8 +20,7 @@ export default {
         },
         isPaid: true,
         paidAt: '02/14/2021',
-        isDelivered: false,
-        deliveredDate: null,
+        isShipped: false,
     },
     {
     _id: 3,
@@ -32,7 +31,6 @@ export default {
     },
     isPaid: true,
     paidAt: '02/14/2021',
-    isDelivered: true,
-    deliveredDate: null,
+    isShipped: false,
     }]
 }

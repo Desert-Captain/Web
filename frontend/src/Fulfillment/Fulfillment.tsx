@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import data from './data';
 
-function Orders() {
+function Fulfillment(props: any) {
     return (
         <div className="content content-margined">
             <div className="order-header">
-                <h3>Orders</h3>
+                <h3>Fulfillment</h3>
             </div>
             <div className="order-list">
                 <table className="table">
@@ -16,26 +16,22 @@ function Orders() {
                             <th>DATE</th>
                             <th>TOTAL</th>
                             <th>USER</th>
-                            <th>PAID</th>
                             <th>PAID AT</th>
-                            <th>DELIVERED</th>
-                            <th>DELIVERED AT</th>
+                            <th>SHIPPED</th>
                             <th>ACTIONS</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {data.order.map(order => (
-                            <tr key={order._id}>
-                            <td>{order._id}</td>
-                            <td>{order.createdAt}</td>
-                            <td>{order.totalPrice}</td>
-                            <td>{order.user.name}</td>
-                            <td>{order.isPaid}</td>
-                            <td>{order.paidAt}</td>
-                            <td>{order.isDelivered.toString()}</td>
-                            <td>{order.deliveredDate}</td>
+                        {data.fulfillment.map(fulfillment => (
+                            <tr key={fulfillment._id} className={fulfillment.isShipped ? 'shipped' : 'notShipped'}>
+                            <td>{fulfillment._id}</td>
+                            <td>{fulfillment.createdAt}</td>
+                            <td>{fulfillment.totalPrice}</td>
+                            <td>{fulfillment.user.name}</td>
+                            <td>{fulfillment.paidAt}</td>
+                            <td>{fulfillment.isShipped.toString()}</td>
                             <td>
-                                <Link to={"/order/" + order._id} className="button secondary" >
+                                <Link to={"/fulfillment/" + fulfillment._id} className="button secondary" >
                                     Details
                                     </Link>
                             </td>
@@ -47,4 +43,4 @@ function Orders() {
         </div>);
 };
 
-export default Orders;
+export default Fulfillment;
