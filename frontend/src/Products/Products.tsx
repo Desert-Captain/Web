@@ -13,6 +13,8 @@ type Product = {
     imageUrl: string;
 }
 
+const emptyProducts: Product[] = [];
+
 function Products() {
     const [products, setProducts]: [Product[], (products: Product[]) => void] 
         = useState(emptyProducts);
