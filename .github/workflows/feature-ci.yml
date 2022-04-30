@@ -5,6 +5,8 @@ on:
     branches-ignore:
       - main 
 
+  # main branch test
+
 jobs:
   ci-build: 
     name: "Build and Test"
